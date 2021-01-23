@@ -6,7 +6,7 @@
 > refer: [transformer blog](https://jalammar.github.io/illustrated-transformer/)
 
 Transformer由Encoder 和 Decoder两个部分组成，其基本架构如下：
-<p align="center"><img src="/DeepLearning/Pics/Transformer.png" alt="Lenet.png" style="zoom:40%;" />
+<p align="center"><img src="/docs/DeepLearning/Pics/Transformer.png" alt="Lenet.png" style="zoom:40%;" />
 
 左边的部分是Eecoder，右边的那个长得比较高的是Decoder，下面分别展开说明
 
@@ -14,7 +14,7 @@ Transformer由Encoder 和 Decoder两个部分组成，其基本架构如下：
 
 其中，左边的灰色区域代表了一个**identical layer**，由两个sub-layer组成，根据数据通过的次序分别为:
 1. **self-attention mechanism**: 
-   <p align="center"><img src="/DeepLearning/Pics/TAtt.png" alt="Lenet.png" style="zoom:40%;" />
+   <p align="center"><img src="/docs/DeepLearning/Pics/TAtt.png" alt="Lenet.png" style="zoom:40%;" />
 
    如上图所示，其中左边的 Scaled Dot-Product Attention可以写作
 
@@ -24,15 +24,15 @@ Transformer由Encoder 和 Decoder两个部分组成，其基本架构如下：
 
    其中 Q, K, V 三个矩阵由输入的embedding乘以三个不同的权重矩阵得到
    > Pic refer [transformer blog](https://jalammar.github.io/illustrated-transformer/)
-   <p align="center"><img src="/DeepLearning/Pics/self-attention-matrix-calculation.png" alt="Lenet.png" style="zoom:40%;" />
+   <p align="center"><img src="/docs/DeepLearning/Pics/self-attention-matrix-calculation.png" alt="Lenet.png" style="zoom:40%;" />
 
    如果拆分来看，Scaled Dot-Product Attention 实际上做了下面的事情
-   <p align="center"><img src="/DeepLearning/Pics/self-attention-output.png" alt="Lenet.png" style="zoom:60%;" />
+   <p align="center"><img src="/docs/DeepLearning/Pics/self-attention-output.png" alt="Lenet.png" style="zoom:60%;" />
 
    概括就是：输入的embedding乘以权重矩阵得到的Q和K矩阵（上面 q1 对应了Q矩阵的第一行, 其他类似）通过 点乘 来计算attention的score，然后softmax归一化输出得到权重，权重乘以 value 向量得到输出的 embedding
 
    作者在这个基础上加入了multi-attention机制，从而可以更好地捕获到各个position的信息，即:
-   <p align="center"><img src="/DeepLearning/Pics/transformer_multi-headed_self-attention-recap.png" alt="Lenet.png" style="zoom:60%;" />
+   <p align="center"><img src="/docs/DeepLearning/Pics/transformer_multi-headed_self-attention-recap.png" alt="Lenet.png" style="zoom:60%;" />
 
 
    
@@ -61,6 +61,6 @@ decoder和encoder类似，变化如下：
 注意，Encoder可以并行计算，但Decoder不是一次把所有序列解出来的，而是像rnn一样一个一个解出来的，因为要用上一个位置的输入当作attention的query
 
 ### Positional Encoding
- <p align="center"><img src="/DeepLearning/Pics/PE.png" alt="Lenet.png" style="zoom:50%;" />
+ <p align="center"><img src="/docs/DeepLearning/Pics/PE.png" alt="Lenet.png" style="zoom:50%;" />
 
 即，输入到第一个encoder的embedding是原始的embedding和positional encoding求 element-wise add 得到的
