@@ -15,7 +15,7 @@
 
 ROC曲线是Receiver Operating Characteristic Curve的简称，中文名为“受试者工作特征曲线”。
 
-<p align="center"><img src="/MachineLearning/Pics/ROC.jpg" alt="ROC" style="zoom:67%;"/>
+<p align="center"><img src="/docs/MachineLearning/Pics/ROC.jpg" alt="ROC" style="zoom:67%;"/>
 
 ROC曲线的横坐标为假阳性率（False Positive Rate，FPR）（负样本中预测为正的比例）:
 $$
@@ -27,7 +27,7 @@ TPR = \frac{TP}{TP+FN}
 $$
 其中TP，FP，FN，TN可以用混搅矩阵来表示：
 
-<p align="center"><img src="/MachineLearning/Pics/confusionMatrix.png" alt="confusionMatrix" style="zoom:50%;" />
+<p align="center"><img src="/docs/MachineLearning/Pics/confusionMatrix.png" alt="confusionMatrix" style="zoom:50%;" />
 
 ### 2. ROC曲线的理解&应用
 
@@ -43,11 +43,11 @@ $$
 
 下图是一个二分模型真实的输出结果，一共有20个样本，输出的概率就是模型判定其为正例的概率，第二列是样本的真实标签。
 
-<p align="center"><img src="/MachineLearning/Pics/binary_classification.png" alt="binary_classification" style="zoom:30%;" />
+<p align="center"><img src="/docs/MachineLearning/Pics/binary_classification.png" alt="binary_classification" style="zoom:30%;" />
 
 现在我们指定一个阈值为0.9，那么只有第一个样本（0.9）会被归类为正例，而其他所有样本都会被归为负例，因此，对于0.9这个阈值，我们可以计算出FPR为0，TPR为0.1（因为总共10个正样本，预测正确的个数为1），那么我们就知道曲线上必有一个点为(0, 0.1)。依次选择不同的阈值（或称为“截断点”），画出全部的关键点以后，再连接关键点即可最终得到ROC曲线如下图所示
 
-<p align="center"><img src="/MachineLearning/Pics/ROC_bar_example.png" alt="ROC_bar_example" style="zoom:30%;" />
+<p align="center"><img src="/docs/MachineLearning/Pics/ROC_bar_example.png" alt="ROC_bar_example" style="zoom:30%;" />
 
 ### AUC面积
 

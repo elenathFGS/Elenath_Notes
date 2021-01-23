@@ -67,7 +67,7 @@ K折交叉验证是相比较上述两种方法的一种折中的办法，k指的
 
 ROC曲线是Receiver Operating Characteristic Curve的简称，中文名为“受试者工作特征曲线”。
 
-<p align="center"><p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/ROC.jpg" alt="ROC"></img>
+<p align="center"><p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/ROC.jpg" alt="ROC"></img>
 
 ROC曲线的横坐标为假阳性率（False Positive Rate，FPR）（负样本中预测为正的比例）:
 $$
@@ -79,7 +79,7 @@ TPR = \frac{TP}{TP+FN}
 $$
 其中TP，FP，FN，TN可以用混搅矩阵来表示：
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/confusionMatrix.png" alt="confusionMatrix" style="zoom:50%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/confusionMatrix.png" alt="confusionMatrix" style="zoom:50%;" />
 
 ### 2. ROC曲线的理解&应用
 
@@ -95,11 +95,11 @@ $$
 
 下图是一个二分模型真实的输出结果，一共有20个样本，输出的概率就是模型判定其为正例的概率，第二列是样本的真实标签。
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/binary_classification.png" alt="binary_classification" style="zoom:30%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/binary_classification.png" alt="binary_classification" style="zoom:30%;" />
 
 现在我们指定一个阈值为0.9，那么只有第一个样本（0.9）会被归类为正例，而其他所有样本都会被归为负例，因此，对于0.9这个阈值，我们可以计算出FPR为0，TPR为0.1（因为总共10个正样本，预测正确的个数为1），那么我们就知道曲线上必有一个点为(0, 0.1)。依次选择不同的阈值（或称为“截断点”），画出全部的关键点以后，再连接关键点即可最终得到ROC曲线如下图所示
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/ROC_bar_example.png" alt="ROC_bar_example" style="zoom:30%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/ROC_bar_example.png" alt="ROC_bar_example" style="zoom:30%;" />
 
 ### 4. AUC面积
 
@@ -119,7 +119,7 @@ AUC（Area Under Curve）就是ROC曲线下的面积大小（沿着ROC横轴做�
 
 **个人理解：**核密度估计就是用数据分布直方图通过小区间采样来和核函数来估计每个横坐标对应的密度，让离散的数据分布变成连续的密度函数。是一种<u>非参数估计方法</u>。
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/KDE.jpg" alt="KDE" style="zoom:33%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/KDE.jpg" alt="KDE" style="zoom:33%;" />
 
 ### 1.2 其他的各种plot图及其关系看PPT
 
@@ -150,13 +150,13 @@ AUC（Area Under Curve）就是ROC曲线下的面积大小（沿着ROC横轴做�
 
 **做法**：借助流形在局部上与欧式空间同胚的性质，对每个点基于欧式距离找到其近邻点，然后建立近邻连接图，从而获得测地线距离的近似
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/Isomap.png" alt="Isomap" style="zoom:45%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/Isomap.png" alt="Isomap" style="zoom:45%;" />
 
 * 例如上面这幅图，上下两个点距离，从一点出发，逐个经过曲面上的近邻点到另一点，而不是直接画一条直线
 
 ### 3.2 Isomap算法
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/IsomapAlgo.png" alt="IsomapAlgo" style="zoom:45%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/IsomapAlgo.png" alt="IsomapAlgo" style="zoom:45%;" />
 
 
 
@@ -213,7 +213,7 @@ AUC（Area Under Curve）就是ROC曲线下的面积大小（沿着ROC横轴做�
 * 对各个项的特征进行描述，如电影推荐中电影的演员、流派等，基于项的相似度来进行推荐
 * 由特征-值构成，一般特征用布尔向量描述，如下
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/Item-based.png" alt="Item-based" style="zoom:30%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/Item-based.png" alt="Item-based" style="zoom:30%;" />
 
 > 两部电影的profile：各包含5个演员，有2个同时出现在两部电影中，一共8位不同的演员（前8列），最后一列是电影的评分（α是缩放因子）
 
@@ -221,7 +221,7 @@ AUC（Area Under Curve）就是ROC曲线下的面积大小（沿着ROC横轴做�
 
 为项建立向量表示后，需要将用户的偏好表示成同一空间下的向量，<u>例如：需要将用户对电影的打分转换为用户对各个演员的评分，如下</u>
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/ContentSystem.png" alt="ContentSystem" style="zoom:45%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/ContentSystem.png" alt="ContentSystem" style="zoom:45%;" />
 
 > 解释：
 >
@@ -258,13 +258,13 @@ Cons：无法利用其他用户来判断、过度特化、适当的特征难以�
 
 具体算法如下（其中改进相当于用用户相似度加权）：
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/User-User.png" alt="User-User" style="zoom:33%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/User-User.png" alt="User-User" style="zoom:33%;" />
 
 ##### 1.1 基于项的（Item-Item）
 
 适用于user更新频繁的应用。给用户推荐和他原有喜好类似的物品。这种相似是基于项的共同出现几率（例如用户买了X，同时时也买了Y）。具体算法如下：
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/Item-Item.png" alt="Item-Item" style="zoom:50%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/Item-Item.png" alt="Item-Item" style="zoom:50%;" />
 
 > 在实践中，往往Item-Item方式效果好，因为Item比User要简单些，User可能有多种偏好
 
@@ -334,7 +334,7 @@ $$
 
 假设OPT（最优）的算法可以匹配的节点对为$X$，最差的情况就是，在贪心算法中，前一半的节点的匹配的正好把后一半的节点的匹配给占用了（最多也只可能占用这么多），而前一半节点本来可以不占用这些匹配的，因此贪心算法在该情况下匹配的节点数为 $ \frac{X}{2}$。如下图所示：
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/binaryMatch.jpeg" alt="binaryMatch" style="zoom:50%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/binaryMatch.jpeg" alt="binaryMatch" style="zoom:50%;" />
 
 > 蓝色的是OPT算法的匹配，红色的是greedy算法得到的匹配
 
@@ -344,9 +344,9 @@ $$
 
 贪心算法的竞争率下界也为 $\large \bold{\frac{1}{2}} $，证明如图，图片来源于[CS246: Mining Massive Datasets](http://www.mmds.org/)
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/greedyLower.png" alt="greedyLower" style="zoom:40%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/greedyLower.png" alt="greedyLower" style="zoom:40%;" />
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/greedyLower2.png" alt="greedyLower2" style="zoom:40%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/greedyLower2.png" alt="greedyLower2" style="zoom:40%;" />
 
 ## 5.3 Adwords问题在线算法
 
@@ -354,13 +354,13 @@ $$
 
 ### 5.3.1 Adwords问题设置
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/Adwords算法.png" alt="Adwords算法" style="zoom:50%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/Adwords算法.png" alt="Adwords算法" style="zoom:50%;" />
 
 ### 5.3.2 Adwords问题Greedy算法
 
 **Greedy**: **每次选择 $\large 投标价格（Bid）\times 点击率（CTR）$ 最大的广告商来给出广告结果。**最差竞争率为 $\large \bold{\frac{1}{2}} $
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/greedy_Adwords.png" alt="greedy_Adwords" style="zoom:33%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/greedy_Adwords.png" alt="greedy_Adwords" style="zoom:33%;" />
 
 
 
@@ -368,7 +368,7 @@ $$
 
 **Balance**: **将查询分配给出价最高且剩余预算最多的广告商**。对于两个advertiser的情况，竞争率为 $\large \bold{\frac{3}{4}} $
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/balance.png" alt="balance" style="zoom:33%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/balance.png" alt="balance" style="zoom:33%;" />
 
 **分析**：
 
@@ -388,7 +388,7 @@ $$
 
 ### 1.1 社会网络图的局部性
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/SocialNetwork.png" alt="SocialNetwork" width=400 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/SocialNetwork.png" alt="SocialNetwork" width=400 />
 
 下面计算存在边(X,Y)和(X,Z)时，边(Y,Z)也存在的概率：
 
@@ -409,17 +409,17 @@ $$
 
 更准确的定义是，如果x和y之间存在多条最短路径，则边(a,b)的贡献记为这些最短路径中通过边(a,b)的比例，否则若只有一条最短路径，则贡献度为1，如下图所示：（尝试算一下那个中介度为7.5的）
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/betweenness.png" alt="betweenness" style="zoom:50%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/betweenness.png" alt="betweenness" style="zoom:50%;" />
 
 **Girvan-Newman算法**本质是一个Hierarchical的方法，思想是每一轮计算各个节点间的中介度，然后将中介度最大的那个（些）边删去，然后根据删边的位置来划分社区。如下图所示：
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/GN-algo.png" alt="GN-algo" style="zoom:30%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/GN-algo.png" alt="GN-algo" style="zoom:30%;" />
 
 （原来的图是7和8间有一条边，是中介度最大的，所以第一步删去了）
 
 算法描述如下：
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/Girvan-Newman.png" alt="Girvan-Newman" style="zoom:30%;" />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/Girvan-Newman.png" alt="Girvan-Newman" style="zoom:30%;" />
 
 
 
@@ -429,13 +429,13 @@ $$
 
    这一步采用BFS算法，每个父节点最短路径数目为子节点的最短路径数目之和，如下图
 
-   <p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/GN_BFS.png" alt="GN_BFS" width=500 />
+   <p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/GN_BFS.png" alt="GN_BFS" width=500 />
 
 2. 将每个节点用根节点X到它最短路径的数目来标记（如上）
 
 3. 自底向上计算，根据第2步得到的最短路径数目来计算各个边的贡献度（对初始贡献度1加权，权重为子节点和父节点的比值）
 
-   <p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/GN_compute.jpeg" alt="GN_compute" width=500 />
+   <p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/GN_compute.jpeg" alt="GN_compute" width=500 />
 
 4. 以每个节点为根重复上述计算过程
 
@@ -453,7 +453,7 @@ $$
 
 完全二部图的发现和频繁项挖掘是等价的，如下所示。
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/KST.png" alt="KST" width=500 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/KST.png" alt="KST" width=500 />
 
 ## 3. Partitioning of Graphs（图划分）
 
@@ -468,7 +468,7 @@ $$
 
 > 归一化割能够产生更加均衡的划分
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/NormalizedCuts.png" alt="NormalizedCuts" width=550 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/NormalizedCuts.png" alt="NormalizedCuts" width=550 />
 
 ### 3.2 谱方法的图划分
 
@@ -491,7 +491,7 @@ $$
 * 特征值都是非负实数，最小特征值为0
 * 特征向量是实正交向量
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/LAP_min.png" alt="LAP_min" width=400 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/LAP_min.png" alt="LAP_min" width=400 />
 
 由上述性质，x必然有正也有负，将正的和负的进行划分即可
 
@@ -512,7 +512,7 @@ $$
 * 图节点**V**, 给定数目的社区**C**, 成员关系**M**
 * 社区C中任意两个节点有边连接的概率为$p_c$
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/community_detect.png" alt="community_detect" width=500 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/community_detect.png" alt="community_detect" width=500 />
 
 总体来看，整个图中任意两个节点u,v间有边的概率为：
 $$
@@ -551,7 +551,7 @@ $$
 
 考虑整个图，任意两点存在边的概率可以推导为：
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/AGM_weighted.png" alt="AGM_weighted" width=300 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/AGM_weighted.png" alt="AGM_weighted" width=300 />
 
 同样，基于一个确定的图，可以用极大似然来估计$F_i$
 $$
@@ -572,7 +572,7 @@ $$
 
 **寻找其他三角形的算法**
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/sanjiaox.png" alt="sanjiaox" width=500 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/sanjiaox.png" alt="sanjiaox" width=500 />
 
 m条边，$O(m×m^\frac{1}{2})$
 
@@ -621,11 +621,11 @@ m条边，$O(m×m^\frac{1}{2})$
 
 1. **k-distance：第k距离**：距离p第k远的点的距离，不包括p
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/k-dis.png" alt="k-dis" width=500 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/k-dis.png" alt="k-dis" width=500 />
 
 2. **k-distance neighborhood of p：第k距离邻域 $N_k(P)$**：p的第k距离及以内的所有点，包括第k距离 
 
-   <p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/kima.png" alt="kima" width=400 />
+   <p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/kima.png" alt="kima" width=400 />
 
 3. **reach-distance 可达距离**：$reach−distancek(p,o)=max\{k−distance(o),d(p,o)\}$
 
@@ -634,11 +634,11 @@ m条边，$O(m×m^\frac{1}{2})$
 
 4.  **local reachability density：局部可达密度**：表示点p的第k邻域内点到p的平均可达距离的倒数。（注意是p的邻域点 Nk(p)到p的可达距离，不是p到 Nk(p)的可达距离）(下面图错了。分子中应该是$reach-dist_k(o,p)$)
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/k-dist.png" alt="k-dist" width=300 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/k-dist.png" alt="k-dist" width=300 />
 
 5. **local outlier factor 局部离群因子**：表示点p的邻域点 $N_k(p)$的局部可达密度与点p的局部可达密度之比的平均数。
 
-   <p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/kform.png" alt="kform" width=500 />
+   <p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/kform.png" alt="kform" width=500 />
 
    如果这个比值越接近1，说明p的其邻域点密度差不多，p可能和邻域同属一簇；如果这个比值越小于1，说明p的密度高于其邻域点密度，p为密集点；如果这个比值越大于1，说明p的密度小于其邻域点密度，p越可能是异常点。
 
@@ -652,7 +652,7 @@ m条边，$O(m×m^\frac{1}{2})$
 
 2. **欠采样（undersampling）**：通过减少多数类来使数据达到平衡
 
-   <p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/oversample.png" alt="oversample" width=400 />
+   <p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/oversample.png" alt="oversample" width=400 />
 
 ### 3.1 欠采样（undersampling）
 
@@ -694,7 +694,7 @@ m条边，$O(m×m^\frac{1}{2})$
 
 基于k近邻用两个旧样本合成新样本
 
-<p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/makenew.png" alt="makenew" width=500 />
+<p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/makenew.png" alt="makenew" width=500 />
 
 
 
@@ -724,7 +724,7 @@ m条边，$O(m×m^\frac{1}{2})$
 
 * 各个节点可以使用贪心策略进行分裂，增益函数如下
 
-  <p align="center"><img src="/CourseNotes/HIT_Data_Mining/Pics/gain.png" alt="gain" width=550 />
+  <p align="center"><img src="/docs/CourseNotes/HIT_Data_Mining/Pics/gain.png" alt="gain" width=550 />
 
 * 传统GBDT在优化时只用到一阶导数信息，xgboost则对代价函数进行了二阶泰勒展开，同时用到了一阶和二阶导数
 * 在各个特征上对所有样本做了预排序，将样本按照特征取值排序，然后从全部特征取值中找到最优的分裂点位，该算法的**候选分裂点数量与样本数量成正比**。

@@ -50,7 +50,7 @@ $$
 
 ### 1.4 L1范数和L2范数的区别
 从图中可以直观感受L1范数和L2范数的区别
-<p align="center"><img src="/DeepLearning/Pics/L1andL2.jpg" alt="L1和L2正则化" style="zoom:40%;" />
+<p align="center"><img src="/docs/docs/DeepLearning/Pics/L1andL2.jpg" alt="L1和L2正则化" style="zoom:40%;" />
 
 同时，从贝叶斯先验的角度看，当训练一个模型时，仅依靠当前的训练数据集是不够的，为了实现更好的泛化能力，往往需要加入先验项，而加入正则项相当于加入了一种先验。
 
@@ -121,7 +121,7 @@ whitening （白化）的目的就是降低输入的冗余性，数据经过白�
 1. **在哪里做BatchNorm？**
    
    在X=WU+B计算之后，非线性函数（激活函数）变换之前
-   <p align="center"><img src="/DeepLearning/Pics/BatchNorm.png" alt="BatchNorm.png" style="zoom:60%;" />
+   <p align="center"><img src="/docs/DeepLearning/Pics/BatchNorm.png" alt="BatchNorm.png" style="zoom:60%;" />
 2. **BatchNorm的两个参数$\gamma$和$\beta$作用是什么？**
    
    BatchNorm可能会导致网络表达能力下降，为了防止这一点，每个神经元增加两个调节参数（scale和shift），其实就是变换的反操作
@@ -131,7 +131,7 @@ whitening （白化）的目的就是降低输入的冗余性，数据经过白�
    3. 使得对数据初始化要求降低，可以增大学习率等
 
 其实上面的问题都可以在原文的伪代码找到答案**原始论文中BatchNorm的具体操作过程如下：**
-<p align="center"><img src="/DeepLearning/Pics/BatchNorm_Code.png" alt="BatchNorm_Code.png" style="zoom:30%;" />
+<p align="center"><img src="/docs/DeepLearning/Pics/BatchNorm_Code.png" alt="BatchNorm_Code.png" style="zoom:30%;" />
 
 ## 5. 梯度更新优化器
 > 参考：[深度学习——优化器算法Optimizer详解（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）](https://www.cnblogs.com/guoyaohua/p/8542554.html)
@@ -141,12 +141,12 @@ whitening （白化）的目的就是降低输入的冗余性，数据经过白�
 
 ## 6. 激活函数(activation function)
 
-<p align="center"><img src="/DeepLearning/Pics/sample-activation-functions-square.png" alt="sample-activation-functions-square.png" style="zoom:45%;" />
+<p align="center"><img src="/docs/DeepLearning/Pics/sample-activation-functions-square.png" alt="sample-activation-functions-square.png" style="zoom:45%;" />
 
 激活函数负责给神经网络的线性映射引入非线性，提高网络的拟合能力。
 
 以全连接神经网络为例，激活函数在线性计算求和后进行计算，如下：
 
-<p align="center"><img src="/DeepLearning/Pics/activationFunction.png" alt="activationFunction.png" style="zoom:60%;" />
+<p align="center"><img src="/docs/DeepLearning/Pics/activationFunction.png" alt="activationFunction.png" style="zoom:60%;" />
 
 由于需要处理成千上万的神经元的输出，激活函数必须是简单、可以快速计算的。下面介绍几个主要的激活函数
